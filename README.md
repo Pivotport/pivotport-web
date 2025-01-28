@@ -49,36 +49,44 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## Add News Articles
+
+
+
+
+## How do I quickly add new articles?
 
 To quickly add news articles to the website, follow these steps:
 
-1. Create a new Markdown file in the src/content/articles directory with a descriptive filename (e.g., quantum-breakthrough.md)
-
-2. Add the required frontmatter at the top of the file with these fields:
-
+---
+1. Create a new Markdown file in the ```src/content/articles``` directory with a descriptive filename 
+(e.g., ```quantum-breakthrough.md```)
 
 ---
+2. Add the required frontmatter at the top of the file with these fields:
+
+```md
+---
 title: "Your Article Title"
-date: 2024-01-15
-author: "Author Name"
+date: 2025-01-25
+author: "Rajiv"
 category: "Category Name"
 excerpt: "A brief summary of the article (optional but recommended)"
 ---
-
-Your article content here...
-
+```
+---
 3. The supported categories are:
 
+```
 Artificial Intelligence
 Quantum Engineering
 Cloud Engineering
-
+```
+---
 4. Write your article content using Markdown syntax below the frontmatter.
    
 Here's a complete example:
 
-
+```
 ---
 title: "Quantum Computing Breakthrough in Financial Modeling"
 date: 2024-01-15
@@ -86,6 +94,7 @@ author: "Rajiv"
 category: "Quantum Engineering"
 excerpt: "Our team has achieved a significant breakthrough in applying quantum algorithms to complex financial modeling, reducing computation time by 90%."
 ---
+
 
 ## The Challenge
 
@@ -108,11 +117,13 @@ This breakthrough opens new possibilities for:
 - Real-time trading strategies
 - Complex risk analysis
 - Market prediction models
+```
+---
 
 The article will automatically appear in:
 
-The articles listing page (/articles)
+The articles listing page (```/articles```)
 The homepage's latest articles section
 The search results
 The sitemap
-No additional configuration is needed - the Astro content collections system will automatically process and display the new article.
+
