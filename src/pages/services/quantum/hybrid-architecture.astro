@@ -1,0 +1,153 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+---
+
+<ServiceLayout
+  title="Hybrid Classical-Quantum Architecture"
+  description="Seamlessly integrate quantum and classical computing systems with our proven hybrid architecture solutions"
+>
+  <div class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Bridging Classical and Quantum Computing</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      Our hybrid architecture solutions enable organizations to leverage the power of quantum computing while maintaining the reliability of classical systems. We design and implement scalable architectures that optimize workload distribution between quantum and classical resources.
+    </p>
+    
+    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+      <h3 class="text-2xl font-semibold mb-4">Key Features</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="font-semibold text-purple-600 mb-2">Seamless Integration</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Unified API layer for quantum-classical communication</li>
+            <li>• Automated workload orchestration</li>
+            <li>• Real-time performance optimization</li>
+            <li>• Scalable resource management</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-purple-600 mb-2">Security Framework</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Quantum-safe encryption protocols</li>
+            <li>• Secure data transmission</li>
+            <li>• Access control and authentication</li>
+            <li>• Compliance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-8 rounded-lg mb-12">
+      <h3 class="text-2xl font-semibold mb-6">Architecture Components</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-purple-600 mb-3">Quantum Layer</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Quantum circuit optimization</li>
+            <li>• Error correction</li>
+            <li>• Qubit management</li>
+            <li>• State preparation</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-purple-600 mb-3">Classical Layer</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>• High-performance computing</li>
+            <li>• Data preprocessing</li>
+            <li>• Result post-processing</li>
+            <li>• Resource scheduling</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-purple-600 mb-3">Integration Layer</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>• API management</li>
+            <li>• Load balancing</li>
+            <li>• Monitoring & logging</li>
+            <li>• Security controls</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="text-2xl font-semibold mb-6">Implementation Process</h3>
+      <div class="relative">
+        <div class="absolute top-0 left-6 h-full w-0.5 bg-purple-200"></div>
+        <div class="space-y-6">
+          {[
+            {
+              title: "Architecture Assessment",
+              description: "Evaluate existing infrastructure and requirements"
+            },
+            {
+              title: "Design & Planning",
+              description: "Create detailed architecture blueprints and implementation roadmap"
+            },
+            {
+              title: "Development & Integration",
+              description: "Build and integrate quantum-classical components"
+            },
+            {
+              title: "Testing & Optimization",
+              description: "Validate performance and optimize system efficiency"
+            },
+            {
+              title: "Deployment & Monitoring",
+              description: "Roll out the solution and establish monitoring systems"
+            }
+          ].map((step, index) => (
+            <div class="relative pl-12">
+              <div class="absolute left-0 top-1.5 w-12 h-12 flex items-center justify-center">
+                <div class="w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-100"></div>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">{step.title}</h4>
+              <p class="text-gray-700">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <h3 class="text-2xl font-semibold mb-6">Success Metrics</h3>
+      <div class="grid md:grid-cols-4 gap-6">
+        {[
+          {
+            metric: "40%",
+            label: "Average Performance Improvement"
+          },
+          {
+            metric: "99.9%",
+            label: "System Reliability"
+          },
+          {
+            metric: "<50ms",
+            label: "Integration Latency"
+          },
+          {
+            metric: "24/7",
+            label: "Monitoring & Support"
+          }
+        ].map((item) => (
+          <div class="text-center">
+            <div class="text-3xl font-bold text-purple-600 mb-2">{item.metric}</div>
+            <div class="text-gray-700">{item.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-purple-50 p-8 rounded-lg">
+    <h2 class="text-2xl font-bold mb-6">Ready to Transform Your Architecture?</h2>
+    <p class="mb-6">Let's discuss how our hybrid architecture solutions can help you achieve quantum advantage while maintaining operational excellence.</p>
+    <div class="flex gap-4">
+      <a href="/contact" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
+        Schedule a Consultation
+      </a>
+      <a href="/services/quantum/verification" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg hover:bg-purple-50 transition-colors">
+        Explore Verification Services
+      </a>
+    </div>
+  </div>
+</ServiceLayout>

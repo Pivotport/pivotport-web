@@ -1,0 +1,163 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+---
+
+<ServiceLayout
+  title="Quantum Workforce Development"
+  description="Comprehensive training and development programs to build quantum computing expertise"
+>
+  <div class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Building Quantum Expertise</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-4">Training Programs</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Fundamentals of Quantum Computing</li>
+          <li>• Quantum Algorithms</li>
+          <li>• Quantum Programming</li>
+          <li>• Industry Applications</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-4">Certification Paths</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Quantum Developer</li>
+          <li>• Quantum Architect</li>
+          <li>• Quantum Analyst</li>
+          <li>• Industry Expert</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-4">Workshops</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Hands-on Labs</li>
+          <li>• Case Studies</li>
+          <li>• Industry Projects</li>
+          <li>• Expert Sessions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-8 rounded-lg mb-12">
+    <h2 class="text-2xl font-bold mb-6">Learning Paths</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="text-xl font-semibold mb-4">Technical Track</h3>
+        <div class="space-y-4">
+          {[
+            {
+              level: "Beginner",
+              topics: ["Quantum Mechanics Basics", "Linear Algebra", "Programming Fundamentals"]
+            },
+            {
+              level: "Intermediate",
+              topics: ["Quantum Circuits", "Quantum Algorithms", "Error Correction"]
+            },
+            {
+              level: "Advanced",
+              topics: ["Advanced Algorithms", "Quantum Architecture", "Industry Applications"]
+            }
+          ].map((track) => (
+            <div>
+              <h4 class="font-semibold text-purple-600 mb-2">{track.level}</h4>
+              <ul class="space-y-1 text-gray-700">
+                {track.topics.map((topic) => (
+                  <li>• {topic}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="text-xl font-semibold mb-4">Business Track</h3>
+        <div class="space-y-4">
+          {[
+            {
+              level: "Foundation",
+              topics: ["Quantum Computing Overview", "Business Applications", "Industry Use Cases"]
+            },
+            {
+              level: "Strategic",
+              topics: ["Implementation Strategy", "Risk Assessment", "ROI Analysis"]
+            },
+            {
+              level: "Leadership",
+              topics: ["Technology Roadmap", "Team Development", "Innovation Management"]
+            }
+          ].map((track) => (
+            <div>
+              <h4 class="font-semibold text-purple-600 mb-2">{track.level}</h4>
+              <ul class="space-y-1 text-gray-700">
+                {track.topics.map((topic) => (
+                  <li>• {topic}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+    <h2 class="text-2xl font-bold mb-6">Program Benefits</h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      {[
+        {
+          metric: "500+",
+          label: "Certified Professionals"
+        },
+        {
+          metric: "95%",
+          label: "Completion Rate"
+        },
+        {
+          metric: "40+",
+          label: "Industry Partners"
+        },
+        {
+          metric: "24/7",
+          label: "Learning Support"
+        }
+      ].map((stat) => (
+        <div class="text-center">
+          <div class="text-3xl font-bold text-purple-600 mb-2">{stat.metric}</div>
+          <div class="text-gray-700">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="bg-purple-50 p-8 rounded-lg">
+    <h2 class="text-2xl font-bold mb-6">Start Your Quantum Journey</h2>
+    <p class="mb-6">Ready to build your quantum computing expertise? Contact us to discuss our training programs and certification paths.</p>
+    <div class="flex gap-4">
+      <a href="/contact" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
+        Enroll Now
+      </a>
+      <a href="/services/quantum/applications" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg hover:bg-purple-50 transition-colors">
+        Explore Applications
+      </a>
+    </div>
+  </div>
+</ServiceLayout>

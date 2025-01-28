@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const openPositions = [
+  {
+    title: "Senior Quantum Software Engineer",
+    department: "Engineering",
+    location: "Chicago, IL",
+    type: "Full-time",
+    description: "Lead the development of quantum computing applications and algorithms."
+  },
+  {
+    title: "Cloud Solutions Architect",
+    department: "Engineering",
+    location: "Chicago, IL",
+    type: "Full-time",
+    description: "Design and implement enterprise-grade cloud solutions."
+  },
+  {
+    title: "Machine Learning Engineer",
+    department: "AI/ML",
+    location: "Chicago, IL",
+    type: "Full-time",
+    description: "Develop and deploy machine learning models for quantum applications."
+  },
+  {
+    title: "Technical Project Manager",
+    department: "Project Management",
+    location: "Chicago, IL",
+    type: "Full-time",
+    description: "Lead quantum and cloud engineering projects from inception to delivery."
+  }
+];
+---
+
+<Layout title="Careers">
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8">Careers at Pivot Port</h1>
+      
+      <div class="prose prose-lg max-w-none mb-12">
+        <p class="lead text-xl text-gray-600">
+          Join us in shaping the future of quantum computing and cloud technologies. We're looking for passionate individuals who want to make a difference.
+        </p>
+      </div>
+
+      <div class="bg-purple-50 p-8 rounded-lg mb-12">
+        <h2 class="text-2xl font-bold mb-6">Why Join Us?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-4">Innovation</h3>
+            <p class="text-gray-600">Work on cutting-edge quantum and cloud technologies that shape the future.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-4">Growth</h3>
+            <p class="text-gray-600">Continuous learning opportunities and career development paths.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-4">Benefits</h3>
+            <p class="text-gray-600">Competitive compensation, health benefits, and work-life balance.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Open Positions</h2>
+      <div class="space-y-6">
+        {openPositions.map(position => (
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="text-xl font-bold">{position.title}</h3>
+                <p class="text-gray-600">{position.department}</p>
+              </div>
+              <a
+                href={`/contact?position=${encodeURIComponent(position.title)}`}
+                class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                Apply Now
+              </a>
+            </div>
+            <div class="flex gap-4 text-sm text-gray-600 mb-4">
+              <span>{position.location}</span>
+              <span>•</span>
+              <span>{position.type}</span>
+            </div>
+            <p class="text-gray-700">{position.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-gradient-to-r from-purple-100 to-indigo-100 p-8 rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Don't See Your Perfect Role?</h2>
+        <p class="mb-6">
+          We're always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

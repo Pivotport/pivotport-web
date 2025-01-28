@@ -1,0 +1,217 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import Logo from '../components/Logo.astro';
+import Search from '../components/Search.astro';
+import ServicesDropdown from '../components/ServicesDropdown.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Together, we innovate at the intersection of quantum and cloud, transforming possibilities into reality" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Pivot Port, Inc.</title>
+  </head>
+  <body>
+    <header class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white sticky top-0 z-50">
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <!-- Logo and Mobile Menu Button -->
+          <div class="flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">
+              <Logo />
+            </a>
+            <button 
+              id="mobile-menu-button" 
+              class="md:hidden p-2 text-white hover:text-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-lg"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path 
+                  id="menu-icon"
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M4 6h16M4 12h16m-7 6h7"
+                  class="block"
+                />
+                <path 
+                  id="close-icon"
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"
+                  class="hidden"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <div 
+            id="menu-items" 
+            class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0"
+          >
+            <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+              <a href="/" class="hover:text-purple-300 transition-colors">Home</a>
+              <a href="/about" class="hover:text-purple-300 transition-colors">About</a>
+              <ServicesDropdown />
+              <a href="/articles" class="hover:text-purple-300 transition-colors">Articles</a>
+              <a href="/contact" class="hover:text-purple-300 transition-colors">Contact</a>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="md:ml-4 w-full md:w-64">
+              <Search placeholder="Search..." />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <slot />
+    
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <Logo class="text-white mb-4" />
+            <p class="text-gray-400">Together, we innovate at the intersection of quantum and cloud, transforming possibilities into reality.</p>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2">
+              <li><a href="/about" class="text-gray-400 hover:text-purple-300">About Us</a></li>
+              <li><a href="/contact" class="text-gray-400 hover:text-purple-300">Contact Us</a></li>
+              <li><a href="/careers" class="text-gray-400 hover:text-purple-300">Careers</a></li>
+              <li><a href="/locations" class="text-gray-400 hover:text-purple-300">Locations</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li><a href="/privacy" class="text-gray-400 hover:text-purple-300">Privacy Statement</a></li>
+              <li><a href="/terms" class="text-gray-400 hover:text-purple-300">Terms & Conditions</a></li>
+              <li><a href="/cookie-policy" class="text-gray-400 hover:text-purple-300">Cookie Policy</a></li>
+              <li><a href="/accessibility" class="text-gray-400 hover:text-purple-300">Accessibility Statement</a></li>
+              <li><a href="/privacy/do-not-sell" class="text-gray-400 hover:text-purple-300">Do Not Sell My Information</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2">
+              <li><a href="/articles" class="text-gray-400 hover:text-purple-300">News Articles</a></li>
+              <li><a href="/sitemap" class="text-gray-400 hover:text-purple-300">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+          <p class="text-center text-gray-400">&copy; 2025 Pivot Port, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const menuItems = document.getElementById('menu-items');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  function toggleMenu() {
+    const isExpanded = mobileMenuButton?.getAttribute('aria-expanded') === 'true';
+    mobileMenuButton?.setAttribute('aria-expanded', (!isExpanded).toString());
+    
+    menuItems?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+
+    // Add slide animation
+    if (!isExpanded) {
+      menuItems?.classList.add('menu-open');
+    } else {
+      menuItems?.classList.remove('menu-open');
+    }
+  }
+
+  mobileMenuButton?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('#mobile-menu-button') && !target.closest('#menu-items')) {
+      menuItems?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      menuItems?.classList.remove('menu-open');
+    }
+  });
+
+  // Prevent clicks inside menu from closing it
+  menuItems?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+</script>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile menu animation */
+  #menu-items {
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    #menu-items {
+      background-color: theme('colors.purple.900');
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    #menu-items.menu-open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #menu-items:not(.menu-open) {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  /* Improve focus visibility */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid theme('colors.purple.300');
+    outline-offset: 2px;
+  }
+</style>

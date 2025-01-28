@@ -1,0 +1,71 @@
+---
+const services = [
+  {
+    title: 'Quantum Engineering',
+    items: [
+      { name: 'Strategy & Advisory', href: '/services/quantum/strategy' },
+      { name: 'Hybrid Architecture', href: '/services/quantum/hybrid-architecture' },
+      { name: 'Verification Services', href: '/services/quantum/verification' },
+      { name: 'Industry Solutions', href: '/services/quantum/solutions' },
+      { name: 'Workforce Development', href: '/services/quantum/workforce' },
+      { name: 'Technology Applications', href: '/services/quantum/applications' },
+      { name: 'Startup Mentoring', href: '/services/quantum/startup' },
+      { name: 'Platform Development', href: '/services/quantum/platforms' }
+    ]
+  },
+  {
+    title: 'Cloud Engineering',
+    items: [
+      { name: 'Cloud Strategy', href: '/services/cloud/strategy' },
+      { name: 'Architecture & Design', href: '/services/cloud/architecture' },
+      { name: 'DevOps Solutions', href: '/services/cloud/devops' },
+      { name: 'Containers & Microservices', href: '/services/cloud/containers' },
+      { name: 'IoT & Edge Computing', href: '/services/cloud/iot-edge' },
+      { name: 'AI/ML Solutions', href: '/services/cloud/ai' },
+      { name: 'Analytics Solutions', href: '/services/cloud/analytics' },
+      { name: 'HPC Engineering', href: '/services/cloud/hpc' }
+    ]
+  }
+];
+---
+
+<div class="relative group">
+  <button
+    class="flex items-center space-x-2 hover:text-purple-300 focus:outline-none"
+    aria-expanded="false"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+    <span>Services</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div class="absolute left-0 mt-2 w-screen md:w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+    <div class="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-6 p-6">
+        {services.map((category) => (
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 tracking-wide uppercase mb-3">
+              {category.title}
+            </h3>
+            <ul class="space-y-2">
+              {category.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-gray-600 hover:text-purple-600 block transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

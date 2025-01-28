@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Do Not Sell My Information">
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8">Do Not Sell My Personal Information</h1>
+      
+      <div class="prose prose-lg max-w-none">
+        <p class="lead text-xl text-gray-600 mb-8">
+          Your privacy rights are important to us. This page explains your rights regarding the sale of your personal information and how to exercise them.
+        </p>
+
+        <div class="space-y-8">
+          <section>
+            <h2>Your Rights</h2>
+            <p>
+              Under the California Consumer Privacy Act (CCPA) and other privacy laws, you have the right to:
+            </p>
+            <ul>
+              <li>Opt-out of the sale of your personal information</li>
+              <li>Request deletion of your personal information</li>
+              <li>Access your personal information</li>
+              <li>Non-discrimination for exercising your rights </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Our Data Practices</h2>
+            <p>
+              Pivot Port does not sell your personal information to third parties. However, we may share your information with service providers who assist in our operations, as described in our Privacy Statement.
+            </p>
+          </section>
+
+          <section>
+            <h2>Exercise Your Rights</h2>
+            <div class="bg-purple-50 p-6 rounded-lg">
+              <h3 class="font-semibold mb-4">Submit a Request</h3>
+              <form class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                  <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                  <input type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Request Type</label>
+                  <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500">
+                    <option>Do Not Sell My Information</option>
+                    <option>Delete My Information</option>
+                    <option>Access My Information</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Additional Details</label>
+                  <textarea rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500"></textarea>
+                </div>
+                <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                  Submit Request
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <section>
+            <h2>Verification Process</h2>
+            <p>
+              To protect your privacy, we will verify your identity before responding to your request. We may ask for additional information to verify your identity.
+            </p>
+          </section>
+
+          <section>
+            <h2>Response Timeline</h2>
+            <p>
+              We will respond to your request within 45 days. If we need more time (up to 90 days), we will inform you in writing.
+            </p>
+          </section>
+
+          <section>
+            <h2>Authorized Agent</h2>
+            <p>
+              You may designate an authorized agent to make a request on your behalf. The authorized agent must provide proof of your written permission and verify their own identity.
+            </p>
+          </section>
+
+          <section>
+            <h2>Contact Information</h2>
+            <p>
+              If you have questions about this policy or need assistance, please contact us:
+            </p>
+            <p>
+              Email: privacy@pivotport.com<br>
+              Phone: +1 (312) 555-0123<br>
+              Address: 233 S Wacker Dr, Chicago, IL 60606
+            </p>
+          </section>
+
+          <p class="text-sm text-gray-600">
+            Last Updated: January 1, 2024
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

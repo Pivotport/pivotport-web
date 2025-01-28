@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = {
+  quantum: [
+    { name: 'Strategy & Advisory', href: '/services/quantum/strategy' },
+    { name: 'Hybrid Architecture', href: '/services/quantum/hybrid-architecture' },
+    { name: 'Verification Services', href: '/services/quantum/verification' },
+    { name: 'Industry Solutions', href: '/services/quantum/solutions' },
+    { name: 'Workforce Development', href: '/services/quantum/workforce' },
+    { name: 'Technology Applications', href: '/services/quantum/applications' },
+    { name: 'Startup Mentoring', href: '/services/quantum/startup' },
+    { name: 'Platform Development', href: '/services/quantum/platforms' }
+  ],
+  cloud: [
+    { name: 'Cloud Strategy', href: '/services/cloud/strategy' },
+    { name: 'Architecture & Design', href: '/services/cloud/architecture' },
+    { name: 'DevOps Solutions', href: '/services/cloud/devops' },
+    { name: 'Containers & Microservices', href: '/services/cloud/containers' },
+    { name: 'IoT & Edge Computing', href: '/services/cloud/iot-edge' },
+    { name: 'AI/ML Solutions', href: '/services/cloud/ai' },
+    { name: 'Analytics Solutions', href: '/services/cloud/analytics' },
+    { name: 'HPC Engineering', href: '/services/cloud/hpc' }
+  ]
+};
+
+const mainPages = [
+  { name: 'Home', href: '/' },
+  { name: 'Articles', href: '/articles' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Sitemap', href: '/sitemap' }
+];
+---
+
+<Layout title="Sitemap">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-12">Sitemap</h1>
+
+    <div class="space-y-12">
+      <!-- Main Pages -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Main Pages</h2>
+        <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {mainPages.map(page => (
+            <li>
+              <a
+                href={page.href}
+                class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow hover:text-purple-600"
+              >
+                {page.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Quantum Engineering -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Quantum Engineering Services</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.quantum.map(service => (
+              <li>
+                <a
+                  href={service.href}
+                  class="block p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors hover:text-purple-600"
+                >
+                  {service.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Cloud Engineering -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Cloud Engineering Services</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.cloud.map(service => (
+              <li>
+                <a
+                  href={service.href}
+                  class="block p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors hover:text-purple-600"
+                >
+                  {service.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
