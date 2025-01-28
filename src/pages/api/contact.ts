@@ -24,8 +24,8 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Prepare email
     const msg = {
-      to: 'contact@pivotport.com', // Replace with your email
-      from: 'noreply@pivotport.com', // Replace with your verified sender
+      to: 'mehedikamal@gmail.com', 
+      from: 'noreply@pivotport.com', 
       replyTo: validatedData.email,
       subject: `Contact Form: ${validatedData.subject}`,
       text: `
